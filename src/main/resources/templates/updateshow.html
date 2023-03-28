@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Show Details</title>
+</head>
+<body>
+    <h3>TV Show Details</h3>
+
+    <div data-th-object="${show}">
+    <label>Show Name: </label>
+        <span data-th-text="*{name}"></span>
+        <br><br>
+
+        <label>Summary: </label>
+        <span data-th-utext="*{summary}"></span>
+        <br><br>
+    </div>
+
+    <form data-th-action="@{'/update'}" method="post" data-th-object="${review}">
+
+        
+        <div class="container">
+            <input type="hidden" data-th-value="${show.id}" name="id">
+            
+                <label>Reviewer's Name:</label>
+                <input type="text" style="width: 300px;" data-th-field="*{username}">
+
+                <br><br>
+
+                <label>Rating:</label>
+                <input type="number" data-th-field="*{rating}">
+
+                <br><br>
+
+                <label>Comments:</label>
+                <input type="text" style="height: 100px; width: 300px;" data-th-field="*{comments}">
+                <br><br>
+
+                <button type="submit">Update</button>
+
+            
+        </div> 
+    </form>
+</body>
+</html>

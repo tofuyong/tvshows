@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Shows</title>
+</head>
+<body>
+    <h3>All Shows</h3>
+
+    <div class="container">
+
+        <!-- <form method="GET" data-th-action="@{/showall}">
+
+			<h4>Shows</h4>
+			<select name="shownames">
+				<option data-th-each="s: ${showNames}" data-th-value="${s}" data-th-text="${s}">
+				</option>
+			</select>
+
+			<button type="submit">GET</button>
+
+		</form> -->
+
+        <!-- <div data-th-field="*{showNames}"> -->
+            <ul>
+                <li data-th-each="s : ${showNames}" >
+                    <a data-th-href="@{/{showNames}(showNames=${s})}"> 
+                        <code data-th-text="${s}"></code>
+                    </a>
+                </li>
+            </ul>
+        <!-- </div> -->
+       
+    </div> 
+    
+</body>
+</html>
+
+
